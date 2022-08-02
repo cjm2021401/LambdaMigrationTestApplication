@@ -35,9 +35,6 @@ public class EmailService {
     public void SendEmail(Email email, Member member) throws Exception{
             EmailService();
             System.out.println(email.getTitle());
-            AmazonSimpleEmailService client =
-                    AmazonSimpleEmailServiceClientBuilder.standard()
-                            .withRegion(Regions.US_WEST_2).build();
             SendEmailRequest request = new SendEmailRequest()
                     .withDestination(
                             new Destination().withToAddresses(member.getEmail()))
